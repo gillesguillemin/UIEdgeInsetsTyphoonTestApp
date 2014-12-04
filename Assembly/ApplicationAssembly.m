@@ -7,8 +7,6 @@
 #import "AppDelegate.h"
 #import "UIEdgeInsetsTestClass.h"
 
-//#define NSValueFromPrimitive(var) ([NSValue value:&var withObjCType:@encode(typeof(var))])
-
 
 @implementation ApplicationAssembly {
     NSDictionary *sizes;
@@ -19,17 +17,9 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        sizes = @{
-                @"value1" : [NSValue valueWithCGSize:CGSizeMake(300, 79)],
-        };
-
-        edgeInsets = @{
-                @"value1" : [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(30, 40, 30, 40)]
-        };
-
-        floats = @{
-                @"value1" : @20.0,
-        };
+        sizes = @{@"value1" : [NSValue valueWithCGSize:CGSizeMake(300, 79)]};
+        edgeInsets = @{@"value1" : [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(30, 40, 30, 40)]};
+        floats = @{@"value1" : @20.0};
     }
 
     return self;
