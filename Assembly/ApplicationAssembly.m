@@ -59,13 +59,12 @@
 }
 
 - (UIEdgeInsetsTestClass *)uIEdgeInsetsTestClass2 {
-UIEdgeInsets testValue = UIEdgeInsetsMake(30, 40, 30, 40);
     return [TyphoonDefinition withClass:[UIEdgeInsetsTestClass class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithSomeCGSize:someCGFloat:anotherCGSize:edgeInsets:anotherCGFloat:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:sizes[@"value1"]];
             [initializer injectParameterWith:floats[@"value1"]];
             [initializer injectParameterWith:[NSValue valueWithCGSize:(CGSizeMake(0, 0))]];
-            [initializer injectParameterWith:[NSValue valueWithBytes:&testValue objCType:@encode(UIEdgeInsets)]];
+            [initializer injectParameterWith:edgeInsets[@"value1"]];
             [initializer injectParameterWith:floats[@"value1"]];
         }];
         definition.scope = TyphoonScopePrototype;
